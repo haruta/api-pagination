@@ -27,6 +27,7 @@ module Rails
       options = {
         :page     => params[:page],
         :per_page => (options.delete(:per_page) || params[:per_page])
+        :paginate_array_options => options[:paginate_array_options] || {}
       }
       collection = ApiPagination.paginate(collection, options)
 
